@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Codeforces 231E Cactus | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前天早上开的这道题，今天终于把它解决掉了……第一次写lca、第一次写ST表、貌似第一次写边－双联通图的缩点……
+problem
+Codeforces Round #143 (Div. 2) E
+solution
+由于题目保证每个点最多只在一个环上，故将原图中环缩成一个点，从而得到一张新图，是一颗树。
+此时，我们容易发现，原图两点间simple path的数量即是2^新图两点间缩点个数
+故任意选取新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces 231E Cactus">
+<meta property="og:url" content="http://yoursite.com/2015/03/07/codeforces-231E-cactus/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前天早上开的这道题，今天终于把它解决掉了……第一次写lca、第一次写ST表、貌似第一次写边－双联通图的缩点……
+problem
+Codeforces Round #143 (Div. 2) E
+solution
+由于题目保证每个点最多只在一个环上，故将原图中环缩成一个点，从而得到一张新图，是一颗树。
+此时，我们容易发现，原图两点间simple path的数量即是2^新图两点间缩点个数
+故任意选取新">
+<meta property="og:updated_time" content="2016-02-09T11:26:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codeforces 231E Cactus">
+<meta name="twitter:description" content="前天早上开的这道题，今天终于把它解决掉了……第一次写lca、第一次写ST表、貌似第一次写边－双联通图的缩点……
+problem
+Codeforces Round #143 (Div. 2) E
+solution
+由于题目保证每个点最多只在一个环上，故将原图中环缩成一个点，从而得到一张新图，是一颗树。
+此时，我们容易发现，原图两点间simple path的数量即是2^新图两点间缩点个数
+故任意选取新">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-codeforces-231E-cactus" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/07/codeforces-231E-cactus/" class="article-date">
+  <time datetime="2015-03-07T02:20:10.000Z" itemprop="datePublished">2015-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Codeforces 231E Cactus
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前天早上开的这道题，今天终于把它解决掉了……第一次写lca、第一次写ST表、貌似第一次写边－双联通图的缩点……</p>
+<p>problem</p>
+<p><a href="http://codeforces.com/contest/231/problem/E" target="_blank" rel="external">Codeforces Round #143 (Div. 2) E</a></p>
+<p>solution</p>
+<p>由于题目保证每个点最多只在一个环上，故将原图中环缩成一个点，从而得到一张新图，是一颗树。</p>
+<p>此时，我们容易发现，原图两点间simple path的数量即是2^新图两点间缩点个数</p>
+<p>故任意选取新图中的一点作为树根，预处理出任两点的lca和由根到各点经过的缩点个数，进而便能很好的解决原题了。我采用了bfs＋dfs＋ST表的方法求lca</p>
+<a id="more"></a>
+<p>关于lca的求法，因为做题前花了很多时间学习，故在这里回顾一下我对其中一种求法的理解：</p>
+<p><em>我们假设有一棵有根树要求上面某两点的lca，则可以NlogN预处理，logN查询，具体做法如下：</em></p>
+<p>预处理：</p>
+<p>从根节点bfs一遍整棵树，按先后顺序编号并记录各节点的高度（容易发现同一层节点的编号相邻；然后再dfs一遍整棵树，其中对于某节点的各个儿子按照与先前bfs顺序相同的顺序访问，记录下整个访问路径（以先前的编号记录）<br>同时再维护一个数组first_appear表示各个bfs编号在路径中第一次出现的位置，于是预处理完毕</p>
+<p>查询：</p>
+<p>对于某个查询（u，v）不妨假设u上的bfs编号比v小，于是在first_appear数组中找到对应路径上的值，再查询这段路径上的最小值即是（u，v）的最近公共祖先</p>
+<p>应用：</p>
+<p>比如要找任意树上两点间最短距离，则查询之前那段路径数组对应的边长数组上的总和</p>
+<p>code</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">#include &lt;vector&gt;</div><div class="line">#include &lt;queue&gt;</div><div class="line">#define PB push_back</div><div class="line">#define MP make_pair</div><div class="line">#define X first</div><div class="line">#define Y second</div><div class="line">using namespace std;</div><div class="line">typedef long long ll;</div><div class="line"></div><div class="line">const int N=100003;</div><div class="line">int n,m,num,dfn[N],low[N],fa[N];</div><div class="line">vector&lt;int&gt; e[N],re[N],tmp;</div><div class="line">pair&lt;int,int&gt; sav[N];</div><div class="line">int one[N];</div><div class="line"></div><div class="line">int findfa(int x)</div><div class="line">&#123;</div><div class="line">	if(fa[x]==x) return x;</div><div class="line">	else return fa[x]=findfa(fa[x]);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void getunion(int x,int y)</div><div class="line">&#123;</div><div class="line">	int u=findfa(x);</div><div class="line">	int v=findfa(y);</div><div class="line">	if(u!=v) fa[u]=v,one[v]=1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void dfs(int x,int last)</div><div class="line">&#123;</div><div class="line">	low[x]=dfn[x]=++num;</div><div class="line">	for(int i=0;i&lt;e[x].size();i++)</div><div class="line">	&#123;</div><div class="line">		int now=e[x][i];</div><div class="line">		if(!dfn[now]) dfs(now,x);</div><div class="line">		else if(now!=last) low[x]=min(low[x],dfn[now]);</div><div class="line">	&#125;</div><div class="line">	if(low[x]&lt;=dfn[last]) getunion(x,last);</div><div class="line">	low[last]=min(low[last],low[x]);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void rebuild()</div><div class="line">&#123;</div><div class="line">	for(int i=1;i&lt;=n;i++) re[i].clear();</div><div class="line">	for(int i=1;i&lt;=m;i++)</div><div class="line">	&#123;</div><div class="line">		int x=findfa(sav[i].X);</div><div class="line">		int y=findfa(sav[i].Y);</div><div class="line">		re[x].PB(y); re[y].PB(x);</div><div class="line">	&#125;</div><div class="line">	for(int i=1;i&lt;=n;i++)</div><div class="line">	&#123;</div><div class="line">		sort(re[i].begin(),re[i].end());</div><div class="line">		tmp.clear(); tmp=re[i];</div><div class="line">		re[i].clear();</div><div class="line">		for(int j=0;j&lt;tmp.size();j++)</div><div class="line">			if((j==0||tmp[j]!=tmp[j-1])&amp;&amp;tmp[j]!=i)</div><div class="line">				re[i].PB(tmp[j]);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const ll mmm=1e9+7;</div><div class="line">int bfn[N],fbfn[N],first_appear[N];</div><div class="line">int way[2*N],sum[N],cnt,st[2*N][20];</div><div class="line">queue&lt;int&gt; q;</div><div class="line">bool vis[N];</div><div class="line">ll pow2[N];</div><div class="line"></div><div class="line">void lca_bfs()</div><div class="line">&#123;</div><div class="line">	while(q.size()) q.pop();</div><div class="line">	memset(vis,0,sizeof(vis));</div><div class="line">	q.push(findfa(1));</div><div class="line">	num=0;</div><div class="line">	while(q.size())</div><div class="line">	&#123;</div><div class="line">		int ori=q.front();q.pop();</div><div class="line">		bfn[ori]=++num;</div><div class="line">		fbfn[num]=ori;</div><div class="line">		vis[ori]=true;</div><div class="line">		for(int i=0;i&lt;re[ori].size();i++)</div><div class="line">		&#123;</div><div class="line">			int nex=re[ori][i];</div><div class="line">			if(!vis[nex]) q.push(nex);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void lca_dfs(int x,int last)</div><div class="line">&#123;</div><div class="line">	way[++cnt]=bfn[x];</div><div class="line">	for(int i=0;i&lt;re[x].size();i++)</div><div class="line">	&#123;</div><div class="line">		int y=re[x][i];</div><div class="line">		if(y==last) continue;</div><div class="line">		sum[y]=sum[x]+one[y];</div><div class="line">		lca_dfs(y,x);</div><div class="line">		way[++cnt]=bfn[x];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void pre()</div><div class="line">&#123;</div><div class="line">	memset(first_appear,0,sizeof(first_appear));</div><div class="line">	pow2[0]=1;</div><div class="line">	for(int i=1;i&lt;=num;i++) pow2[i]=pow2[i-1]*2%mmm;</div><div class="line">	for(int i=1;i&lt;=cnt;i++)</div><div class="line">	&#123;</div><div class="line">		int bfsn=way[i];</div><div class="line">		if(!first_appear[bfsn]) first_appear[bfsn]=i;</div><div class="line">		st[i][0]=way[i];</div><div class="line">	&#125;</div><div class="line">	for(int j=1;(1&lt;&lt;j)&lt;=cnt;j++)</div><div class="line">		for(int i=1;i&lt;=cnt-(1&lt;&lt;j)+1;i++)</div><div class="line">			st[i][j]=min(st[i][j-1],st[i+(1&lt;&lt;(j-1))][j-1]);</div><div class="line">&#125;</div><div class="line"></div><div class="line">ll qu(int x,int y)</div><div class="line">&#123;</div><div class="line">	int xx=first_appear[bfn[findfa(x)]];</div><div class="line">	int yy=first_appear[bfn[findfa(y)]];</div><div class="line">	if(xx&gt;yy) swap(xx,yy);</div><div class="line">	int k=0;</div><div class="line">	while(yy-xx+1&gt;=(1&lt;&lt;(k+1))) k++;</div><div class="line">	int lca=min(st[xx][k],st[yy-(1&lt;&lt;k)+1][k]);</div><div class="line">	return pow2[sum[findfa(x)]+sum[findfa(y)]-2*sum[fbfn[lca]]+one[fbfn[lca]]];</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	//freopen(&quot;f.in&quot;,&quot;r&quot;,stdin);///</div><div class="line">	while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2)</div><div class="line">	&#123;</div><div class="line">		for(int i=1;i&lt;=n;i++)</div><div class="line">			e[i].clear();</div><div class="line">		for(int i=1;i&lt;=m;i++)</div><div class="line">		&#123;</div><div class="line">			int x,y;</div><div class="line">			scanf(&quot;%d%d&quot;,&amp;x,&amp;y);</div><div class="line">			e[x].PB(y);</div><div class="line">			e[y].PB(x);</div><div class="line">			sav[i]=MP(x,y);</div><div class="line">		&#125;</div><div class="line">		memset(dfn,0,sizeof(dfn));</div><div class="line">		memset(one,0,sizeof(one));</div><div class="line">		for(int i=1;i&lt;=n;i++) fa[i]=i;</div><div class="line">		num=0; dfs(1,0);</div><div class="line">		rebuild();</div><div class="line">		lca_bfs();</div><div class="line">		sum[findfa(1)]=one[findfa(1)];</div><div class="line">		cnt=0; lca_dfs(findfa(1),0);</div><div class="line">		pre();</div><div class="line">		int k;scanf(&quot;%d&quot;,&amp;k);</div><div class="line">		for(int i=1;i&lt;=k;i++)</div><div class="line">		&#123;</div><div class="line">			int x,y;</div><div class="line">			scanf(&quot;%d%d&quot;,&amp;x,&amp;y);</div><div class="line">			cout &lt;&lt; qu(x,y) &lt;&lt; endl;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>reference</p>
+<p><a href="http://community.topcoder.com/tc?module=Static&amp;d1=tutorials&amp;d2=lowestCommonAncestor#Lowest%20Common%20Ancestor%20" target="_blank" rel="external">Range Minimum Query and Lowest Common Ancestor</a></p>
+<p><a href="https://www.byvoid.com/blog/biconnect" target="_blank" rel="external">图的割点、桥与双连通分支</a></p>
+<p><a href="http://blog.sina.com.cn/s/blog_c0d5430b0101dc7q.html" target="_blank" rel="external">关于无向图中连通分量缩点的问题</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/07/codeforces-231E-cactus/" data-id="ciuukp97f0001v0z3fl3yw0nz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/15/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/03/04/notes-of-deploying/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">博客部署笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/15/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/07/codeforces-231E-cactus/">Codeforces 231E Cactus</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/04/notes-of-deploying/">博客部署笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/04/the-first-article/">第一篇文章</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

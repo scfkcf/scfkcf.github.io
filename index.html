@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.q3c.com"></form>
@@ -68,9 +68,79 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-web-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-web-1-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/10/29/web-1/" class="article-date">
+    <a href="/2016/10/31/web-1-2/" class="article-date">
+  <time datetime="2016-10-31T04:36:00.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/31/web-1-2/">WEB全栈 1-2 第二周</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第二周-Learning-Basic-JavaScript-笔记"><a href="#第二周-Learning-Basic-JavaScript-笔记" class="headerlink" title="第二周 Learning Basic JavaScript 笔记"></a>第二周 Learning Basic JavaScript 笔记</h3><p>3 types of popup:</p>
+<pre><code>alert confirm(ok/cancel) prompt(getting input)
+</code></pre><p>变量</p>
+<pre><code>var 定义变量，弱类型，number、boolean、string
+typeof 检查变量当前类型
+++ -- += -= ... 可用
+parseInt()  parseFloat()  String()
+</code></pre><p>Q: prompt 返回的一定是string？</p>
+<p>函数与事件</p>
+<pre><code>onload=&quot;...&quot;
+function name( x ) {
+    ...
+    return ...;
+}
+</code></pre><p>调试JS程序：在浏览器的 console 中可以看到出错信息</p>
+<pre><code>console.log(...);
+</code></pre><p>Q: 可以直接在浏览器中修改JS文件么？会保存到文件么</p>
+<pre><code>stringName.indexOf(&quot;...&quot;)    // 返回第一个匹配的起始下标
+</code></pre><p>在函数中使用函数中未声明的变量，则使用的其实是全局变量！</p>
+<pre><code>// var pets = new Array(10);
+var pets = [&quot;Dog&quot;, &quot;Cat&quot;, &quot;Rabbit&quot;];
+text = pets.join(&quot;and&quot;);                // default is &quot;,&quot;
+len = pets.length;
+pets.push(&quot;Hamster&quot;);
+pets.unshift(&quot;Hamster&quot;);
+x = pets.pop();
+x = pets.shift();                    // index? complicity?
+res = pets.concat(primes);
+</code></pre><p>JS中Array的实现？</p>
+<p>设置 Array 的 length 属性可改变数组大小</p>
+<p>生成随机数 <code>Math.floor( Math.random() * 50 )</code></p>
+<pre><code>isNaN()    // is not a number
+</code></pre><hr>
+<p>第二周上完辣，to tell the truth, it’s too easy! 快快完成作业，开始下节课吧！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.q3c.com/2016/10/31/web-1-2/" data-id="ciuxx1fb20003rvz3q0c7b7ga" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web-1-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/29/web-1-1/" class="article-date">
   <time datetime="2016-10-29T15:44:17.000Z" itemprop="datePublished">2016-10-29</time>
 </a>
     
@@ -82,7 +152,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/29/web-1/">web_1</a>
+      <a class="article-title" href="/2016/10/29/web-1-1/">WEB全栈 1-1 第一周</a>
     </h1>
   
 
@@ -90,7 +160,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="WEB全栈-1-1-第一周"><a href="#WEB全栈-1-1-第一周" class="headerlink" title="WEB全栈 1-1 第一周"></a>WEB全栈 1-1 第一周</h1><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>最近自己太水了，在寝室宅了半个月了，玩游戏、看小说，什么都没干。。。</p>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>最近自己太水了，在寝室宅了半个月了，玩游戏、看小说，什么都没干。。。</p>
 <p>去WAP上海的实习已经迫近！虽然HR说重在idea，不注重具体怎么实现的，但自己既不会开发PC软件，也不会开发app，网页开发也只会一点儿。。。</p>
 <p>感觉有那么点基础可能会轻松点吧，看到coursera上有港科大的WEB全栈系列课程，恰好前端框架用的也是自己有所耳闻的AngularJS框架，于是决定开始mooc之旅。</p>
 <p>WEB全栈系列有6门课程，自己准备至少学完前3门课吧。</p>
@@ -130,11 +200,12 @@
 <p>学习完了第一课第一周内容，为了解锁互评作业，根据自身情况填表成功申请到$79助学金购买课程。</p>
 <p>开始做作业！</p>
 <p>10.30 23:37</p>
+<p>写完作业辣，要开始互评同学的作业，好慌 &gt;.&lt; 先看看别人给我的反馈吧</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/29/web-1/" data-id="ciuwsu1py00058zz30u3hv93m" class="article-share-link">Partager</a>
+      <a data-url="http://blog.q3c.com/2016/10/29/web-1-1/" data-id="ciuxx1fb50005rvz322li5uvt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/29/milestone/" data-id="ciuwsu1pu00028zz3v52mypkp" class="article-share-link">Partager</a>
+      <a data-url="http://blog.q3c.com/2016/10/29/milestone/" data-id="ciuxx1fb10002rvz3ihxhs1u8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -228,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/15/hello-world/" data-id="ciuwsu1pq00018zz3lvkpvame" class="article-share-link">Partager</a>
+      <a data-url="http://blog.q3c.com/2016/10/15/hello-world/" data-id="ciuxx1fay0001rvz301bd2cq9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -275,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2015/03/07/codeforces-231E-cactus/" data-id="ciuwsu1pl00008zz3bg9tzra4" class="article-share-link">Partager</a>
+      <a data-url="http://blog.q3c.com/2015/03/07/codeforces-231E-cactus/" data-id="ciuxx1fat0000rvz3dxukt99o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2015/03/04/notes-of-deploying/" data-id="ciuwsu1pv00038zz3zjgfizkj" class="article-share-link">Partager</a>
+      <a data-url="http://blog.q3c.com/2015/03/04/notes-of-deploying/" data-id="ciuxx1fb40004rvz3wdotxfom" class="article-share-link">Share</a>
       
       
     </footer>
@@ -392,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2015/03/04/the-first-article/" data-id="ciuwsu1px00048zz3oi1876as" class="article-share-link">Partager</a>
+      <a data-url="http://blog.q3c.com/2015/03/04/the-first-article/" data-id="ciuxx1fb80006rvz3e117ilyi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -427,12 +498,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2016/10/29/web-1/">web_1</a>
+            <a href="/2016/10/31/web-1-2/">WEB全栈 1-2 第二周</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/29/web-1-1/">WEB全栈 1-1 第一周</a>
           </li>
         
           <li>
@@ -445,10 +520,6 @@
         
           <li>
             <a href="/2015/03/07/codeforces-231E-cactus/">Codeforces 231E Cactus</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/04/notes-of-deploying/">博客部署笔记</a>
           </li>
         
       </ul>
@@ -464,7 +535,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 scfkcf<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

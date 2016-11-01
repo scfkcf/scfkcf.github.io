@@ -68,6 +68,66 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-web-1-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/31/web-1-3/" class="article-date">
+  <time datetime="2016-10-31T13:54:24.000Z" itemprop="datePublished">2016-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/31/web-1-3/">WEB全栈 1-3 第三周</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第三周-Learning-Advanced-JavaScript-笔记"><a href="#第三周-Learning-Advanced-JavaScript-笔记" class="headerlink" title="第三周 Learning Advanced JavaScript 笔记"></a>第三周 Learning Advanced JavaScript 笔记</h3><p>For loop    <code>for   for in   for of</code></p>
+<pre><code>for (var index=0; index&lt;continents.length; index++) { ... }
+for (var index in continents) { ... }
+// we may called left-hand-side or right-hand-side
+var onePerson = { initials:&quot;DR&quot;, age:40, job:&quot;Professor&quot; };
+</code></pre><p>Q: 顺序是按定义的顺序？ 似乎是的</p>
+<pre><code>for (var continent of continents) { ... }
+</code></pre><p>in 取的是id或者说left-hand-side，of 取的是值或者说right-hand-side</p>
+<hr>
+<pre><code>arrayName.sort()   .reverse()   .indexOf(target, startPosition)
+         .lastIndexOf()
+         .slice(startPosition, [endPosition])   // extract
+         .splice(position, quantity) // remove &amp; affect origin
+         .splice(position, 0, &quot;addThing&quot;(s)) // add a thing
+         .splice(position, quantity, addElement(s)) // replace
+         .forEach(yourFunction)
+                   yourFunction(element, index, array)
+         .map(yourFunction) // return a result array
+</code></pre><p>虚函数？  在使用函数的地方直接定义<br>如果是 …:… 的数组(?) forEach 时 index 会怎样</p>
+<hr>
+<p>开始 DOM 的学习</p>
+<p>DOM = Document Object Model        (html, xml, svg 都会转换成 DOM</p>
+<p>树形结构</p>
+<p><img src="/img/treeOfHtml.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.q3c.com/2016/10/31/web-1-3/" data-id="ciuz2lx4h0005qlz3hgb0ru5b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-web-1-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/31/web-1-2/" class="article-date">
@@ -108,7 +168,7 @@ function name( x ) {
 <pre><code>console.log(...);
 </code></pre><p>Q: 可以直接在浏览器中修改JS文件么？会保存到文件么</p>
 <pre><code>stringName.indexOf(&quot;...&quot;)    // 返回第一个匹配的起始下标
-</code></pre><p>在函数中使用函数中未声明的变量，则使用的其实是全局变量！</p>
+</code></pre><p>在函数中使用函数中未声明的变量，则使用的其实是全局变量！<br>    貌似说的有点问题？</p>
 <pre><code>// var pets = new Array(10);
 var pets = [&quot;Dog&quot;, &quot;Cat&quot;, &quot;Rabbit&quot;];
 text = pets.join(&quot;and&quot;);                // default is &quot;,&quot;
@@ -122,13 +182,14 @@ res = pets.concat(primes);
 <p>设置 Array 的 length 属性可改变数组大小</p>
 <p>生成随机数 <code>Math.floor( Math.random() * 50 )</code></p>
 <pre><code>isNaN()    // is not a number
-</code></pre><hr>
+</code></pre><p>JS的执行顺序？？？</p>
+<hr>
 <p>第二周上完辣，to tell the truth, it’s too easy! 快快完成作业，开始下节课吧！</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/31/web-1-2/" data-id="ciuxx1fb20003rvz3q0c7b7ga" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/10/31/web-1-2/" data-id="ciuz2lx4k0006qlz3uva4qz41" class="article-share-link">Share</a>
       
       
     </footer>
@@ -205,7 +266,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/29/web-1-1/" data-id="ciuxx1fb50005rvz322li5uvt" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/10/29/web-1-1/" data-id="ciuz2lx4f0004qlz3lqom27ym" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,7 +315,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/29/milestone/" data-id="ciuxx1fb10002rvz3ihxhs1u8" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/10/29/milestone/" data-id="ciuz2lx4c0002qlz34ghxqxqq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -299,7 +360,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/15/hello-world/" data-id="ciuxx1fay0001rvz301bd2cq9" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/10/15/hello-world/" data-id="ciuz2lx430000qlz398q8amqs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -346,7 +407,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2015/03/07/codeforces-231E-cactus/" data-id="ciuxx1fat0000rvz3dxukt99o" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2015/03/07/codeforces-231E-cactus/" data-id="ciuz2lx4m0007qlz3knfpue8q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -402,7 +463,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2015/03/04/notes-of-deploying/" data-id="ciuxx1fb40004rvz3wdotxfom" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2015/03/04/notes-of-deploying/" data-id="ciuz2lx490001qlz35eyvg7aw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -463,7 +524,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2015/03/04/the-first-article/" data-id="ciuxx1fb80006rvz3e117ilyi" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2015/03/04/the-first-article/" data-id="ciuz2lx4d0003qlz3qlrryyex" class="article-share-link">Share</a>
       
       
     </footer>
@@ -503,6 +564,10 @@ res = pets.concat(primes);
       <ul>
         
           <li>
+            <a href="/2016/10/31/web-1-3/">WEB全栈 1-3 第三周</a>
+          </li>
+        
+          <li>
             <a href="/2016/10/31/web-1-2/">WEB全栈 1-2 第二周</a>
           </li>
         
@@ -516,10 +581,6 @@ res = pets.concat(primes);
         
           <li>
             <a href="/2016/10/15/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/07/codeforces-231E-cactus/">Codeforces 231E Cactus</a>
           </li>
         
       </ul>

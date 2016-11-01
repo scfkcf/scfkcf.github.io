@@ -110,10 +110,50 @@ var onePerson = { initials:&quot;DR&quot;, age:40, job:&quot;Professor&quot; };
          .map(yourFunction) // return a result array
 </code></pre><p>虚函数？  在使用函数的地方直接定义<br>如果是 …:… 的数组(?) forEach 时 index 会怎样</p>
 <hr>
-<p>开始 DOM 的学习</p>
-<p>DOM = Document Object Model        (html, xml, svg 都会转换成 DOM</p>
+<h3 id="开始-DOM-的学习"><a href="#开始-DOM-的学习" class="headerlink" title="开始 DOM 的学习"></a>开始 DOM 的学习</h3><p>DOM = Document Object Model        (html, xml, svg 都会转换成 DOM</p>
 <p>树形结构</p>
 <p><img src="/img/treeOfHtml.png" alt=""></p>
+<p>whitespace node</p>
+<p>解析成DOM时，如<code>&lt;body&gt;</code>和<code>&lt;p&gt;</code>之间有换行或空格，就形成了一个<code>whitespace node</code></p>
+<p>Node Relationships</p>
+<pre><code>parentNode
+childNode[], firstChild, lastChild
+previousSibling, nextSibling
+</code></pre><p>Locationg Nodes   3 ways</p>
+<pre><code>getElementsByTagName()
+getElementById()
+setAttribute()
+</code></pre><p>Creating and Adding Nodes</p>
+<pre><code>createElement(&quot;hr&quot;), createTextNode()
+insertBefore(item, location), appendChild()
+</code></pre><p>Deleting Nodes</p>
+<pre><code>removeChild(this_node)
+</code></pre><p>Cloning Nodes</p>
+<pre><code>Copying a node:     the_node.cloneNode( /false)
+Copying a branch:   the_node.cloneNode(true)
+// Adding nodes:    dest.appendChild(the_node)
+</code></pre><h3 id="More-on-Events"><a href="#More-on-Events" class="headerlink" title="More on Events"></a>More on Events</h3><p>Mouse Events</p>
+<pre><code>onclick   onmousedown   onmouseup
+onmouseover   onmouseout
+</code></pre><p>Timer Events</p>
+<pre><code>setTimeout(yourfunction, time)    // return a timer
+clearTimeout(timer)
+
+setInterval(yourfuction, time)
+clearInterval(timer)
+</code></pre><p>Adding Events by JavaScript</p>
+<pre><code>addEventListener
+removeEventListener
+
+window.addEventListener(&quot;load&quot;, do_something);
+theBody.removeEventListener(&quot;load&quot;, do_something);
+</code></pre><p>据说不是用JavaScript绑的listener，不能remove</p>
+<h3 id="More-on-Functions"><a href="#More-on-Functions" class="headerlink" title="More on Functions"></a>More on Functions</h3><pre><code>assign a function to a variable
+pass a function to a function
+return a function from a function
+</code></pre><hr>
+<p>完成了第一课～</p>
+<p>感觉不难，不过也学了一些东西，有空记得回来复习浏览一下～</p>
 
       
     </div>

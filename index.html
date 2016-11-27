@@ -68,6 +68,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-A-Brief-History-of-Humankind" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/27/A-Brief-History-of-Humankind/" class="article-date">
+  <time datetime="2016-11-27T08:13:40.000Z" itemprop="datePublished">2016-11-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/27/A-Brief-History-of-Humankind/">读《人类简史》笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h3><p>昨天下午，与LP同学闲侃，在LP同学强烈推荐下，自己准备找来读一读《人类简史》。</p>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><p>作者：尤瓦尔.赫拉利</p>
+<h3 id="推荐序"><a href="#推荐序" class="headerlink" title="推荐序"></a>推荐序</h3><p>施泰德“狮人”？</p>
+<p>“弗兰肯斯坦如今正坐在吉尔伽美什肩上企图灭绝智人”</p>
+<p>追求长生不老的“吉尔伽美什计划”和创造科学怪人的“弗兰肯斯坦博士”这两种传说的结合</p>
+<h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>“智人” Homo sapiens</p>
+<p>“认知革命”<br>“农业革命”<br>“科学革命”</p>
+<p>脑容量？</p>
+<p>智人就像是个香蕉共和国的独裁者?</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.q3c.com/2016/11/27/A-Brief-History-of-Humankind/" data-id="ciw0j0j790000o4z38tkx3ytn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-web-2-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/02/web-2-1/" class="article-date">
@@ -124,14 +169,33 @@ jumbotron                        // can out of container
 <p>col-**-push or pull or offset-xx</p>
 <p>push 往右边推，pull 往左边拉</p>
 <p>offset（在左边留空？）</p>
-<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><p>Breadcrumbs    <code>Home -&gt; Menu -&gt; Appetizers</code></p>
+<h3 id="Navigation-and-Navbar"><a href="#Navigation-and-Navbar" class="headerlink" title="Navigation and Navbar"></a>Navigation and Navbar</h3><p>Breadcrumbs    <code>Home -&gt; Menu -&gt; Appetizers</code></p>
 <p>Navbar</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;nav class=&quot;navbar navbar-default&quot; role=&quot;navigation&quot;&gt;</div><div class="line">	&lt;div class=&quot;container&quot;&gt;</div><div class="line">										navbar-header</div><div class="line">		&lt;ul class=&quot;nav navbar-nav&quot;&gt;		navbar-right   navbar-left</div><div class="line">		...</div></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;nav class=&quot;navbar navbar-default&quot; role=&quot;navigation&quot;&gt;</div><div class="line">	&lt;div class=&quot;container&quot;&gt;</div><div class="line">		&lt;div class=&quot;navbar-header&quot;&gt;</div><div class="line">			&lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt; ... &lt;/a&gt;</div><div class="line">		&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;									   navbar-left</div><div class="line">		...</div></pre></td></tr></table></figure>
+<p>Responsive Navigation</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;navbar-header&quot;&gt;</div><div class="line">	&lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot;</div><div class="line">		data-target=&quot;#navbar&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;navbar&quot;&gt;</div><div class="line">		&lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;</div><div class="line">		&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</div><div class="line">		...</div><div class="line">	&lt;/button&gt;</div><div class="line">	&lt;div id=&quot;navbar&quot; class=&quot;navbar-collapse collapse&quot;&gt;</div><div class="line">		&lt;ul class=&quot;nav navbar-nav&quot;&gt; ... &lt;/ul&gt;</div><div class="line">	...</div></pre></td></tr></table></figure>
+<p>??? = = data-target</p>
+<p>Something related to JavaScript within Bootstrap, come back later.</p>
+<h4 id="Positioning-Navbar"><a href="#Positioning-Navbar" class="headerlink" title="Positioning Navbar"></a>Positioning Navbar</h4><p>.navbar-fixed-top<br>.navbar-fixed-bottom<br>.navbar-static-top<br>.navbar-inverse            反色</p>
+<p>fixed-top with static-top ?</p>
+<h4 id="Dropdown"><a href="#Dropdown" class="headerlink" title="Dropdown"></a>Dropdown</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;li class=&quot;dropdown&quot;&gt;</div><div class="line">	&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; role=&quot;button&quot;</div><div class="line">		aria-haspopuo=&quot;true&quot; aria-expanded=&quot;false&quot;&gt; Menu &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;</div><div class="line">	&lt;/a&gt;</div><div class="line">	&lt;ul class=&quot;dropdown-menu&quot;&gt;</div><div class="line">		&lt;li&gt;&lt;a href=&quot;#&quot;&gt; Appetizers &lt;/a&gt;&lt;/li&gt;</div><div class="line">		...</div><div class="line">		&lt;li role=&quot;separator&quot; class=&quot;divider&quot;&gt;&lt;/li&gt;</div><div class="line">		&lt;li class=&quot;dropdown-header&quot;&gt; Specials &lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/li&gt;</div></pre></td></tr></table></figure>
+<h3 id="Icon-Fonts"><a href="#Icon-Fonts" class="headerlink" title="Icon Fonts"></a>Icon Fonts</h3><p>Set of symbols and glyphs, but can be used just like regular fonts</p>
+<p>Example:</p>
+<pre><code>Glyphicons        part of bootstrap
+Font Awesome        very popular
+</code></pre><h4 id="Using-Glyphicons"><a href="#Using-Glyphicons" class="headerlink" title="Using Glyphicons"></a>Using Glyphicons</h4><pre><code>// about 250 available
+&lt;span class=&quot;glyphicon glyphicon-home” aria-hidden=&quot;true&quot;&gt; &lt;/span&gt;
+</code></pre><h4 id="Using-Font-Awesome"><a href="#Using-Font-Awesome" class="headerlink" title="Using Font Awesome"></a>Using Font Awesome</h4><pre><code>&lt;i class=&quot;fa fa-phone&quot;&gt;&lt;/i&gt;    // also include CSS and font files
+</code></pre><p>Bootstrap-social =.=</p>
+<pre><code>bootstrap-social.css
+&lt;a class=&quot;btn btn-social-icon btn-facebook&quot; href=&quot;...&quot;&gt;
+    &lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/11/02/web-2-1/" data-id="civ20llaa0006q4z3wyf7mkzn" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/11/02/web-2-1/" data-id="ciw0j0j8c0008o4z3fo5663c2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -231,7 +295,7 @@ return a function from a function
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/31/web-1-3/" data-id="civ20llac0007q4z3lxr4dbh9" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/10/31/web-1-3/" data-id="ciw0j0j8d0009o4z33qh8h23b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -302,7 +366,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/31/web-1-2/" data-id="civ20llaf0008q4z3o6y5akoz" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/10/31/web-1-2/" data-id="ciw0j0j7w0007o4z3yozn4v2d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +443,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/29/web-1-1/" data-id="civ20lla40004q4z356928bqv" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/10/29/web-1-1/" data-id="ciw0j0j7p0005o4z3vk226uix" class="article-share-link">Share</a>
       
       
     </footer>
@@ -428,7 +492,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/29/milestone/" data-id="civ20lla10002q4z30xq2war3" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/10/29/milestone/" data-id="ciw0j0j7e0001o4z3ylobvxs6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -473,7 +537,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/10/15/hello-world/" data-id="civ20ll9t0000q4z3y7tr5uet" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/10/15/hello-world/" data-id="ciw0j0j7j0003o4z3dru16i5z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -520,7 +584,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2015/03/07/codeforces-231E-cactus/" data-id="civ20ll9y0001q4z3utu2lgin" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2015/03/07/codeforces-231E-cactus/" data-id="ciw0j0j7g0002o4z3oa9kiip1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -576,7 +640,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2015/03/04/notes-of-deploying/" data-id="civ20lla30003q4z30komxfb6" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2015/03/04/notes-of-deploying/" data-id="ciw0j0j7m0004o4z3ba47gst7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -637,7 +701,7 @@ res = pets.concat(primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2015/03/04/the-first-article/" data-id="civ20lla70005q4z30dg8ymnf" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2015/03/04/the-first-article/" data-id="ciw0j0j7u0006o4z3ioru1p20" class="article-share-link">Share</a>
       
       
     </footer>
@@ -677,6 +741,10 @@ res = pets.concat(primes);
       <ul>
         
           <li>
+            <a href="/2016/11/27/A-Brief-History-of-Humankind/">读《人类简史》笔记</a>
+          </li>
+        
+          <li>
             <a href="/2016/11/02/web-2-1/">WEB全栈 2-1 第一周</a>
           </li>
         
@@ -690,10 +758,6 @@ res = pets.concat(primes);
         
           <li>
             <a href="/2016/10/29/web-1-1/">WEB全栈 1-1 第一周</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/29/milestone/">milestone</a>
           </li>
         
       </ul>

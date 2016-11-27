@@ -20,7 +20,7 @@ CDN
 Using Bootstrap&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
 &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;">
 <meta property="og:image" content="http://blog.q3c.com/img/BootstrapGrid.png">
-<meta property="og:updated_time" content="2016-11-06T09:27:35.000Z">
+<meta property="og:updated_time" content="2016-11-07T03:42:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WEB全栈 2-1 第一周">
 <meta name="twitter:description" content="BootstrapGetting Bootstraphttp://getbootstrap.com
@@ -137,14 +137,33 @@ jumbotron                        // can out of container
 <p>col-**-push or pull or offset-xx</p>
 <p>push 往右边推，pull 往左边拉</p>
 <p>offset（在左边留空？）</p>
-<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><p>Breadcrumbs    <code>Home -&gt; Menu -&gt; Appetizers</code></p>
+<h3 id="Navigation-and-Navbar"><a href="#Navigation-and-Navbar" class="headerlink" title="Navigation and Navbar"></a>Navigation and Navbar</h3><p>Breadcrumbs    <code>Home -&gt; Menu -&gt; Appetizers</code></p>
 <p>Navbar</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;nav class=&quot;navbar navbar-default&quot; role=&quot;navigation&quot;&gt;</div><div class="line">	&lt;div class=&quot;container&quot;&gt;</div><div class="line">										navbar-header</div><div class="line">		&lt;ul class=&quot;nav navbar-nav&quot;&gt;		navbar-right   navbar-left</div><div class="line">		...</div></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;nav class=&quot;navbar navbar-default&quot; role=&quot;navigation&quot;&gt;</div><div class="line">	&lt;div class=&quot;container&quot;&gt;</div><div class="line">		&lt;div class=&quot;navbar-header&quot;&gt;</div><div class="line">			&lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt; ... &lt;/a&gt;</div><div class="line">		&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;									   navbar-left</div><div class="line">		...</div></pre></td></tr></table></figure>
+<p>Responsive Navigation</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;navbar-header&quot;&gt;</div><div class="line">	&lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot;</div><div class="line">		data-target=&quot;#navbar&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;navbar&quot;&gt;</div><div class="line">		&lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;</div><div class="line">		&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</div><div class="line">		...</div><div class="line">	&lt;/button&gt;</div><div class="line">	&lt;div id=&quot;navbar&quot; class=&quot;navbar-collapse collapse&quot;&gt;</div><div class="line">		&lt;ul class=&quot;nav navbar-nav&quot;&gt; ... &lt;/ul&gt;</div><div class="line">	...</div></pre></td></tr></table></figure>
+<p>??? = = data-target</p>
+<p>Something related to JavaScript within Bootstrap, come back later.</p>
+<h4 id="Positioning-Navbar"><a href="#Positioning-Navbar" class="headerlink" title="Positioning Navbar"></a>Positioning Navbar</h4><p>.navbar-fixed-top<br>.navbar-fixed-bottom<br>.navbar-static-top<br>.navbar-inverse            反色</p>
+<p>fixed-top with static-top ?</p>
+<h4 id="Dropdown"><a href="#Dropdown" class="headerlink" title="Dropdown"></a>Dropdown</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;li class=&quot;dropdown&quot;&gt;</div><div class="line">	&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; role=&quot;button&quot;</div><div class="line">		aria-haspopuo=&quot;true&quot; aria-expanded=&quot;false&quot;&gt; Menu &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;</div><div class="line">	&lt;/a&gt;</div><div class="line">	&lt;ul class=&quot;dropdown-menu&quot;&gt;</div><div class="line">		&lt;li&gt;&lt;a href=&quot;#&quot;&gt; Appetizers &lt;/a&gt;&lt;/li&gt;</div><div class="line">		...</div><div class="line">		&lt;li role=&quot;separator&quot; class=&quot;divider&quot;&gt;&lt;/li&gt;</div><div class="line">		&lt;li class=&quot;dropdown-header&quot;&gt; Specials &lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/li&gt;</div></pre></td></tr></table></figure>
+<h3 id="Icon-Fonts"><a href="#Icon-Fonts" class="headerlink" title="Icon Fonts"></a>Icon Fonts</h3><p>Set of symbols and glyphs, but can be used just like regular fonts</p>
+<p>Example:</p>
+<pre><code>Glyphicons        part of bootstrap
+Font Awesome        very popular
+</code></pre><h4 id="Using-Glyphicons"><a href="#Using-Glyphicons" class="headerlink" title="Using Glyphicons"></a>Using Glyphicons</h4><pre><code>// about 250 available
+&lt;span class=&quot;glyphicon glyphicon-home” aria-hidden=&quot;true&quot;&gt; &lt;/span&gt;
+</code></pre><h4 id="Using-Font-Awesome"><a href="#Using-Font-Awesome" class="headerlink" title="Using Font Awesome"></a>Using Font Awesome</h4><pre><code>&lt;i class=&quot;fa fa-phone&quot;&gt;&lt;/i&gt;    // also include CSS and font files
+</code></pre><p>Bootstrap-social =.=</p>
+<pre><code>bootstrap-social.css
+&lt;a class=&quot;btn btn-social-icon btn-facebook&quot; href=&quot;...&quot;&gt;
+    &lt;i class=&quot;fa fa-facebook&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.q3c.com/2016/11/02/web-2-1/" data-id="civ20llaa0006q4z3wyf7mkzn" class="article-share-link">Share</a>
+      <a data-url="http://blog.q3c.com/2016/11/02/web-2-1/" data-id="ciw0j0j8c0008o4z3fo5663c2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -152,6 +171,15 @@ jumbotron                        // can out of container
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/11/27/A-Brief-History-of-Humankind/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          读《人类简史》笔记
+        
+      </div>
+    </a>
   
   
     <a href="/2016/10/31/web-1-3/" id="article-nav-older" class="article-nav-link-wrap">
@@ -193,6 +221,10 @@ jumbotron                        // can out of container
       <ul>
         
           <li>
+            <a href="/2016/11/27/A-Brief-History-of-Humankind/">读《人类简史》笔记</a>
+          </li>
+        
+          <li>
             <a href="/2016/11/02/web-2-1/">WEB全栈 2-1 第一周</a>
           </li>
         
@@ -206,10 +238,6 @@ jumbotron                        // can out of container
         
           <li>
             <a href="/2016/10/29/web-1-1/">WEB全栈 1-1 第一周</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/29/milestone/">milestone</a>
           </li>
         
       </ul>
